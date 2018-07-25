@@ -1,0 +1,22 @@
+MONTAR A HEROKU
+
+Para subir el back hay que 
+1.- en 'package.jason' hay que agregar el script llamado 'start':
+
+"scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"  <=== agregar esta línea
+  },
+
+** Se prueba con el comando 'npm start' en la consola del 'back'
+
+2.- En el index.js necesitamos una variable de entorno hacia un puerto
+let port = process.env.PORT || 5000;
+
+Con la siguiente instrucción podremos ver en HEROKU en qué puerto se levantó
+
+app.listen(port, ()=>{
+    console.log(`Todo bien, eres el mejor =*`, `Me levanté en el puerto ${port}`);
+    
+})
+
